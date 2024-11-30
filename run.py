@@ -12,8 +12,9 @@ import rich
 
 dotenv.load_dotenv()
 
-
-FRONTEND_DIR = Path(os.getenv("FRONTEND_DIR", ".frontend"))
+# Disable frontend to run only the backend
+#FRONTEND_DIR = Path(os.getenv("FRONTEND_DIR", ".frontend"))
+FRONTEND_DIR = Path(os.getenv("FRONTEND_DIR", "none"))
 DEFAULT_FRONTEND_PORT = 3000
 STATIC_DIR = Path(os.getenv("STATIC_DIR", "static"))
 

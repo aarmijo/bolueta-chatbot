@@ -93,6 +93,8 @@ class Annotation(BaseModel):
             return self.data.to_llm_content()
         elif self.type == "image":
             raise NotImplementedError("Use image file is not supported yet!")
+        elif self.type == "agent" and isinstance(self.data, AgentAnnotation):
+            return self.data.text
         else:
             logger.warning(
                 f"The annotation {self.type} is not supported for generating context content"
