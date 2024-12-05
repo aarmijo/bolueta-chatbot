@@ -56,6 +56,34 @@ def combine_entities_with_descriptions(entities, descriptions):
             combined.append(combined_entity)
     return combined
 
+def process_ha_rest_entities(data: ChatData):
+    # Convertir la variable de entorno USE_API a un booleano
+    use_api = os.getenv('USE_API', 'false').lower() in ('true', '1', 't', 'y', 'yes')
+    if use_api:
+        # Obtener las entidades desde la llamada al API REST a Home Assistant
+        entidades = fetch_entities()        
+
+        # Cargar las descripciones de las entidades desde el archivo JSON
+        entidades_descripcion = load_entity_descriptions('entities.json')      
+
+        # Combinar las entidades con sus descripciones, eliminando las que no tengan descripción
+        entidades_combinadas = combine_entities_with_descriptions(entidades, entidades_descripcion)
+
+        # Añadir la anotación de tipo agent con el contenido de las entidades combinadas
+        agent_annotation = Annotation(
+            type="agent",
+            data=AgentAnnotation(
+                agent="agent",
+                text=str(entidades_combinadas)
+            )
+        )
+
+        # Añadir la anotación al último mensaje del usuario
+        if data.messages and data.messages[-1].role == MessageRole.USER:
+            if data.messages[-1].annotations is None:
+                data.messages[-1].annotations = []
+            data.messages[-1].annotations.append(agent_annotation)
+
 # streaming endpoint - delete if not needed
 @r.post("")
 async def chat(
@@ -63,33 +91,8 @@ async def chat(
     data: ChatData,
     background_tasks: BackgroundTasks,
 ):
-    try:
-        # Convertir la variable de entorno USE_API a un booleano
-        use_api = os.getenv('USE_API', 'false').lower() in ('true', '1', 't', 'y', 'yes')
-        if use_api:
-            # Obtener las entidades desde la llamada al API REST a Home Assistant
-            entidades = fetch_entities()        
-
-            # Cargar las descripciones de las entidades desde el archivo JSON
-            entidades_descripcion = load_entity_descriptions('entities.json')      
-
-            # Combinar las entidades con sus descripciones, eliminando las que no tengan descripción
-            entidades_combinadas = combine_entities_with_descriptions(entidades, entidades_descripcion)
-
-            # Añadir la anotación de tipo agent con el contenido de las entidades combinadas
-            agent_annotation = Annotation(
-                type="agent",
-                data=AgentAnnotation(
-                    agent="agent",
-                    text=str(entidades_combinadas)
-                )
-            )
-
-            # Añadir la anotación al último mensaje del usuario
-            if data.messages and data.messages[-1].role == MessageRole.USER:
-                if data.messages[-1].annotations is None:
-                    data.messages[-1].annotations = []
-                data.messages[-1].annotations.append(agent_annotation)
+    try:        
+        process_ha_rest_entities(data)
 
         last_message_content = data.get_last_message_content()
         messages = data.get_history_messages()
@@ -116,12 +119,14 @@ async def chat(
             detail=f"Error in chat engine: {e}",
         ) from e
 
-
 # non-streaming endpoint - delete if not needed
 @r.post("/request")
 async def chat_request(
     data: ChatData,
 ) -> Result:
+    
+    process_ha_rest_entities(data)
+
     last_message_content = data.get_last_message_content()
     messages = data.get_history_messages()
 
