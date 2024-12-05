@@ -1,0 +1,10 @@
+[
+    {
+        "entity_id": "person.alberto",
+        "entity_description": "usuario de home assistant llamado alberto"
+    },
+    {
+        "entity_id": "person.natalia",
+        "entity_description": "usuario de home assistant llamada natalia"
+    }
+]

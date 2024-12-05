@@ -1,10 +1,15 @@
 import logging
-
+import os
+import json
+import requests
 from fastapi import APIRouter, BackgroundTasks, HTTPException, Request, status
 from llama_index.core.llms import MessageRole
+from dotenv import load_dotenv
 
 from app.api.routers.events import EventCallbackHandler
 from app.api.routers.models import (
+    Annotation,
+    AgentAnnotation,
     ChatData,
     Message,
     Result,
@@ -18,6 +23,38 @@ chat_router = r = APIRouter()
 
 logger = logging.getLogger("uvicorn")
 
+load_dotenv()
+
+def fetch_entities():
+    url = os.getenv('API_URL')
+    if not url:
+        raise ValueError("API_URL is not set in the environment variables")
+    token = os.getenv('TOKEN')
+    if not token:
+        raise ValueError("TOKEN is not set in the environment variables")
+
+    headers = {
+        'Authorization': f'Bearer {token}',
+        'Content-Type': 'application/json'
+    }
+    response = requests.get(url, headers=headers, verify=False)
+    response.raise_for_status()
+    return response.json()
+
+def load_entity_descriptions(file_path):
+    with open(file_path, 'r') as file:
+        return json.load(file)
+
+def combine_entities_with_descriptions(entities, descriptions):
+    description_dict = {desc["entity_id"]: desc["entity_description"] for desc in descriptions}
+    combined = []
+    for entity in entities:
+        entity_id = entity["entity_id"]
+        if entity_id in description_dict:
+            combined_entity = entity.copy()
+            combined_entity["entity_description"] = description_dict[entity_id]
+            combined.append(combined_entity)
+    return combined
 
 # streaming endpoint - delete if not needed
 @r.post("")
@@ -27,6 +64,33 @@ async def chat(
     background_tasks: BackgroundTasks,
 ):
     try:
+        # Convertir la variable de entorno USE_API a un booleano
+        use_api = os.getenv('USE_API', 'false').lower() in ('true', '1', 't', 'y', 'yes')
+        if use_api:
+            # Obtener las entidades desde la llamada al API REST a Home Assistant
+            entidades = fetch_entities()        
+
+            # Cargar las descripciones de las entidades desde el archivo JSON
+            entidades_descripcion = load_entity_descriptions('entities.json')      
+
+            # Combinar las entidades con sus descripciones, eliminando las que no tengan descripción
+            entidades_combinadas = combine_entities_with_descriptions(entidades, entidades_descripcion)
+
+            # Añadir la anotación de tipo agent con el contenido de las entidades combinadas
+            agent_annotation = Annotation(
+                type="agent",
+                data=AgentAnnotation(
+                    agent="agent",
+                    text=str(entidades_combinadas)
+                )
+            )
+
+            # Añadir la anotación al último mensaje del usuario
+            if data.messages and data.messages[-1].role == MessageRole.USER:
+                if data.messages[-1].annotations is None:
+                    data.messages[-1].annotations = []
+                data.messages[-1].annotations.append(agent_annotation)
+
         last_message_content = data.get_last_message_content()
         messages = data.get_history_messages()
 

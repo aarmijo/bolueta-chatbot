@@ -13,8 +13,8 @@ import rich
 dotenv.load_dotenv()
 
 # Disable frontend to run only the backend
-#FRONTEND_DIR = Path(os.getenv("FRONTEND_DIR", ".frontend"))
-FRONTEND_DIR = Path(os.getenv("FRONTEND_DIR", "none"))
+FRONTEND_DIR = Path(os.getenv("FRONTEND_DIR", ".frontend"))
+#FRONTEND_DIR = Path(os.getenv("FRONTEND_DIR", "none"))
 DEFAULT_FRONTEND_PORT = 3000
 STATIC_DIR = Path(os.getenv("STATIC_DIR", "static"))
 
@@ -130,7 +130,7 @@ async def start_production_server():
 
 async def _run_frontend(
     port: int = DEFAULT_FRONTEND_PORT,
-    timeout: int = 5,
+    timeout: int = 50,
 ) -> tuple[Process, int]:
     """
     Start the frontend development server and return its process and port.

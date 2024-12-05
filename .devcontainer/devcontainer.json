@@ -43,5 +43,6 @@
     3000,
     8000
   ],
+  "appPort": ["54112:54112"],
   "postCreateCommand": "poetry install"
 }
