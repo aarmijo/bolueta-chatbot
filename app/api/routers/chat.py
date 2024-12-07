@@ -25,13 +25,13 @@ logger = logging.getLogger("uvicorn")
 
 load_dotenv()
 
-def fetch_entities():
-    url = os.getenv('API_URL')
+def fetch_ha_entities():
+    url = os.getenv('HA_API_URL')
     if not url:
         raise ValueError("API_URL is not set in the environment variables")
-    token = os.getenv('TOKEN')
+    token = os.getenv('HA_TOKEN')
     if not token:
-        raise ValueError("TOKEN is not set in the environment variables")
+        raise ValueError("HA_TOKEN is not set in the environment variables")
 
     headers = {
         'Authorization': f'Bearer {token}',
@@ -41,11 +41,11 @@ def fetch_entities():
     response.raise_for_status()
     return response.json()
 
-def load_entity_descriptions(file_path):
+def load_ha_entity_descriptions(file_path):
     with open(file_path, 'r') as file:
         return json.load(file)
 
-def combine_entities_with_descriptions(entities, descriptions):
+def combine_ha_entities_with_descriptions(entities, descriptions):
     description_dict = {desc["entity_id"]: desc["entity_description"] for desc in descriptions}
     combined = []
     for entity in entities:
@@ -58,22 +58,24 @@ def combine_entities_with_descriptions(entities, descriptions):
 
 def process_ha_rest_entities(data: ChatData):
     # Convertir la variable de entorno USE_API a un booleano
-    use_api = os.getenv('USE_API', 'false').lower() in ('true', '1', 't', 'y', 'yes')
+    use_api = os.getenv('USE_HA_API', 'false').lower() in ('true', '1', 't', 'y', 'yes')
     if use_api:
         # Obtener las entidades desde la llamada al API REST a Home Assistant
-        entidades = fetch_entities()        
+        entidades = fetch_ha_entities()        
 
         # Cargar las descripciones de las entidades desde el archivo JSON
-        entidades_descripcion = load_entity_descriptions('entities.json')      
+        entidades_descripcion = load_ha_entity_descriptions('ha-entities.json')      
 
         # Combinar las entidades con sus descripciones, eliminando las que no tengan descripción
-        entidades_combinadas = combine_entities_with_descriptions(entidades, entidades_descripcion)
+        entidades_combinadas = combine_ha_entities_with_descriptions(entidades, entidades_descripcion)
+
+        agent_description = os.getenv('HA_AGENT_DESCRIPTION', 'agent')
 
         # Añadir la anotación de tipo agent con el contenido de las entidades combinadas
         agent_annotation = Annotation(
             type="agent",
             data=AgentAnnotation(
-                agent="agent",
+                agent=agent_description,
                 text=str(entidades_combinadas)
             )
         )

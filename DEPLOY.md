@@ -48,6 +48,7 @@ Then, start the app by running the image:
 docker run \
   -v $(pwd)/.env:/app/.env \ # Use ENV variables and configuration from your file-system
   -v $(pwd)/config:/app/config \
+  -v $(pwd)/ha-entities.json:/app/ha-entities.json \
   -v $(pwd)/storage:/app/storage \ # Use your file system to store vector embeddings
   -p 8000:8000 \
   <your_image_name>
@@ -64,6 +65,7 @@ docker run \
   --rm \
   -v $(pwd)/.env:/app/.env \ # Use ENV variables and configuration from your file-system
   -v $(pwd)/config:/app/config \
+  -v $(pwd)/ha-entities.json:/app/ha-entities.json \
   -v $(pwd)/data:/app/data \ # Use your local folder to read the data
   -v $(pwd)/storage:/app/storage \ # Use your file system to store the vector database
   <your_image_name> \
