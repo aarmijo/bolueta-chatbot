@@ -4,7 +4,651 @@
         "entity_description": "usuario de home assistant llamado alberto"
     },
     {
-        "entity_id": "person.natalia",
-        "entity_description": "usuario de home assistant llamada natalia"
+        "entity_id": "sensor.p1s_x_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal P1S-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1s_x_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal P1S-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1s_x_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal P1S-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1s_y_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal P1S-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1s_y_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal P1S-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1s_y_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal P1S-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1s_z_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal P1S-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1s_z_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal P1S-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1s_z_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal P1S-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1n_x_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal P1N-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1n_x_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal P1N-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1n_x_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal P1N-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1n_z_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal P1N-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1n_z_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal P1N-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p1n_z_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal P1N-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p2_x_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal P2-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p2_x_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal P2-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p2_x_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal P2-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p2_y_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal P2-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p2_y_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal P2-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p2_y_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal P2-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p2_z_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal P2-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p2_z_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal P2-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.p2_z_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal P2-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.g1n_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal G1N mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.g1s_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal G1S mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.g2n_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal G2N mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 2 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.g2s_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal G2S mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 2 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.g3n_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal G3N mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.g3s_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal G3S mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.g4n_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal G4N mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 4 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.g4s_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal G4S mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 4 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.g5n_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal G5N mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 5 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.g5s_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal G5S mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 5 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa1s_x_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal AA1S-04-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa1s_x_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal AA1S-04-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa1s_x_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal AA1S-04-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa1s_y_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal AA1S-04-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa1s_y_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal AA1S-04-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa1s_y_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal AA1S-04-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa1s_z_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal AA1S-04-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa1s_z_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal AA1S-04-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa1s_z_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal AA1S-04-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa3s_x_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal AA3S-05-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa3s_x_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal AA3S-05-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa3s_x_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal AA3S-05-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa3s_y_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal AA3S-05-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa3s_y_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal AA3S-05-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa3s_y_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal AA3S-05-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa3s_z_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal AA3S-05-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa3s_z_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal AA3S-05-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa3s_z_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal AA3S-05-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa5s_x_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal AA5S-06-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa5s_x_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal AA5S-06-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa5s_x_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal AA5S-06-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa5s_y_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal AA5S-06-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa5s_y_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal AA5S-06-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa5s_y_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal AA5S-06-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa5s_z_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal AA5S-06-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa5s_z_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal AA5S-06-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa5s_z_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal AA5S-06-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa7s_x_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal AA7S-42-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa7s_x_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal AA7S-42-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa7s_x_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal AA7S-42-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa7s_y_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal AA7S-42-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa7s_y_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal AA7S-42-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa7s_y_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal AA7S-42-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa7s_z_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal AA7S-42-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa7s_z_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal AA7S-42-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.aa7s_z_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal AA7S-42-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te1n_x_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal TE1N7-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te1n_x_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal TE1N7-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te1n_x_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal TE1N7-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te1n_y_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal TE1N7-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te1n_y_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal TE1N7-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te1n_y_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal TE1N7-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te1n_z_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal TE1N7-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te1n_z_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal TE1N7-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te1n_z_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal TE1N7-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 1 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te2n_x_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal TE2N9-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 2 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te2n_x_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal TE2N9-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 2 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te2n_x_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal TE2N9-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 2 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te2n_y_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal TE2N9-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 2 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te2n_y_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal TE2N9-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 2 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te2n_y_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal TE2N9-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 2 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te2n_z_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal TE2N9-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 2 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te2n_z_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal TE2N9-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 2 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te2n_z_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal TE2N9-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 2 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te3n_x_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal TE3N4-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te3n_x_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal TE3N4-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te3n_x_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal TE3N4-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te3n_y_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal TE3N4-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te3n_y_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal TE3N4-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te3n_y_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal TE3N4-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te3n_z_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal TE3N4-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te3n_z_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal TE3N4-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te3n_z_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal TE3N4-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 3 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te4n_x_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal TE4N3-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 4 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te4n_x_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal TE4N3-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 4 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te4n_x_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal TE4N3-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 4 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te4n_y_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal TE4N3-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 4 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te4n_y_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal TE4N3-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 4 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te4n_y_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal TE4N3-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 4 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te4n_z_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal TE4N3-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 4 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te4n_z_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal TE4N3-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 4 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.te4n_z_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal TE4N3-Z mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña VANO 4 del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.inc_n_x_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal INC-N-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.inc_n_x_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal INC-N-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.inc_n_x_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal INC-N-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.inc_n_y_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal INC-N-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.inc_n_y_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal INC-N-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.inc_n_y_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal INC-N-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.inc_s_x_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal INC-S-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.inc_s_x_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal INC-S-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.inc_s_x_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal INC-S-X mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.inc_s_y_avg_panel",
+        "entity_description": "Valor medio en los últimos 12 minutos del canal INC-S-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.inc_s_y_max_panel",
+        "entity_description": "Valor máximo en los últimos 12 minutos del canal INC-S-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sensor.inc_s_y_min_panel",
+        "entity_description": "Valor mínimo en los últimos 12 minutos del canal INC-S-Y mostrado en un panel del modelo 3D. La visualización se encuentra en la pestaña ARCO del interfáz gráfico"
+    },
+    {
+        "entity_id": "sun.sun",
+        "entity_description": "Datos sobre el sol"
+    },
+    {
+        "entity_id": "sensor.sensor_aa1s_z_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal AA1S-04-Z"
+    },
+    {
+        "entity_id": "sensor.sensor_aa1s_z_max_statistics_time",
+        "entity_description": "Hora en la que se ha producido el máximo en el canal AA1S-04-Z"
+    },
+    {
+        "entity_id": "sensor.sensor_aa3s_z_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal AA3S-05-Z"
+    },
+    {
+        "entity_id": "sensor.sensor_aa3s_z_max_statistics_time",
+        "entity_description": "Hora en la que se ha producido el máximo en el canal AA3S-05-Z"
+    },
+    {
+        "entity_id": "sensor.sensor_aa5s_z_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal AA5S-06-Z"
+    },
+    {
+        "entity_id": "sensor.sensor_aa5s_z_max_statistics_time",
+        "entity_description": "Hora en la que se ha producido el máximo en el canal AA5S-06-Z"
+    },
+    {
+        "entity_id": "sensor.sensor_aa7s_z_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal AA7S-42-Z"
+    },
+    {
+        "entity_id": "sensor.sensor_aa7s_z_max_statistics_time",
+        "entity_description": "Hora en la que se ha producido el máximo en el canal AA7S-42-Z"
+    },
+    {
+        "entity_id": "sensor.g1n_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal G1N"
+    },
+    {
+        "entity_id": "sensor.g1s_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal G1S"
+    },
+    {
+        "entity_id": "sensor.g2n_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal G2N"
+    },
+    {
+        "entity_id": "sensor.g2s_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal G2S"
+    },
+    {
+        "entity_id": "sensor.g3n_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal G3N"
+    },
+    {
+        "entity_id": "sensor.g3s_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal G3S"
+    },
+    {
+        "entity_id": "sensor.g4n_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal G4N"
+    },
+    {
+        "entity_id": "sensor.g4s_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal G4S"
+    },
+    {
+        "entity_id": "sensor.g5n_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal G5N"
+    },
+    {
+        "entity_id": "sensor.g5s_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal G5S"
+    },
+    {
+        "entity_id": "sensor.inc_n_x_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal INC-N-X"
+    },
+    {
+        "entity_id": "sensor.inc_n_x_min_statistics",
+        "entity_description": "Mínimo en las últimas 24 horas en el canal INC-N-X"
+    },
+    {
+        "entity_id": "sensor.inc_n_y_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal INC-N-Y"
+    },
+    {
+        "entity_id": "sensor.inc_n_y_min_statistics",
+        "entity_description": "Mínimo en las últimas 24 horas en el canal INC-N-Y"
+    },
+    {
+        "entity_id": "sensor.inc_s_x_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal INC-S-X"
+    },
+    {
+        "entity_id": "sensor.inc_s_x_min_statistics",
+        "entity_description": "Mínimo en las últimas 24 horas en el canal INC-S-X"
+    },
+    {
+        "entity_id": "sensor.inc_s_y_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal INC-S-Y"
+    },
+    {
+        "entity_id": "sensor.inc_s_y_min_statistics",
+        "entity_description": "Mínimo en las últimas 24 horas en el canal INC-S-Y"
+    },
+    {
+        "entity_id": "sensor.te1n_x_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal TE1N7-X"
+    },
+    {
+        "entity_id": "sensor.te1n_z_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal TE1N7-Z"
+    },
+    {
+        "entity_id": "sensor.te2n_x_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal TE2N9-X"
+    },
+    {
+        "entity_id": "sensor.te2n_z_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal TE2N9-Z"
+    },
+    {
+        "entity_id": "sensor.te3n_x_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal TE3N4-X"
+    },
+    {
+        "entity_id": "sensor.te3n_z_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal TE3N4-Z"
+    },
+    {
+        "entity_id": "sensor.te4n_x_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal TE4N3-X"
+    },
+    {
+        "entity_id": "sensor.te4n_z_max_statistics",
+        "entity_description": "Máximo en las últimas 24 horas en el canal TE4N3-Z"
+    },
+    {
+        "entity_id": "weather.forecast_home",
+        "entity_description": "Predicción metereológica en Bolueta"
+    },
+    {
+        "entity_id": "sensor.warnings_totales",
+        "entity_description": "Warnings totales generados por el sistema de alertas en los últimos 12 minutos"
+    },
+    {
+        "entity_id": "sensor.warnings_span_1",
+        "entity_description": "Warnings en el vano 1 generados por el sistema de alertas en los últimos 12 minutos"
+    },
+    {
+        "entity_id": "sensor.warnings_span_2",
+        "entity_description": "Warnings en el vano 2 generados por el sistema de alertas en los últimos 12 minutos"
+    },
+    {
+        "entity_id": "sensor.warnings_span_3",
+        "entity_description": "Warnings en el vano 3 generados por el sistema de alertas en los últimos 12 minutos"
+    },
+    {
+        "entity_id": "sensor.warnings_span_4",
+        "entity_description": "Warnings en el vano 4 generados por el sistema de alertas en los últimos 12 minutos"
+    },
+    {
+        "entity_id": "sensor.warnings_span_5",
+        "entity_description": "Warnings en el vano 5 generados por el sistema de alertas en los últimos 12 minutos"
+    },
+    {
+        "entity_id": "sensor.warnings_span_6",
+        "entity_description": "Warnings en el vano 6 (primera parte del arco) generados por el sistema de alertas en los últimos 12 minutos"
+    },
+    {
+        "entity_id": "sensor.warnings_span_7",
+        "entity_description": "Warnings en el vano 7 (segunda parte del arco) generados por el sistema de alertas en los últimos 12 minutos"
     }
 ]

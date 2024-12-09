@@ -5,6 +5,9 @@ import requests
 from fastapi import APIRouter, BackgroundTasks, HTTPException, Request, status
 from llama_index.core.llms import MessageRole
 from dotenv import load_dotenv
+from influxdb_client import InfluxDBClient
+import pandas as pd
+from pandas import DataFrame
 
 from app.api.routers.events import EventCallbackHandler
 from app.api.routers.models import (
@@ -86,6 +89,79 @@ def process_ha_rest_entities(data: ChatData):
                 data.messages[-1].annotations = []
             data.messages[-1].annotations.append(agent_annotation)
 
+def fetch_influxdb_data(bucket: str, org: str, query: str):
+    url = os.getenv('IDB_API_URL')
+    if not url:
+        raise ValueError("IDB_API_URL is not set in the environment variables")
+    token = os.getenv('IDB_TOKEN')
+    if not token:
+        raise ValueError("IDB_TOKEN is not set in the environment variables")
+    client = InfluxDBClient(url=url, token=token, org=org, verify_ssl=False)
+    query_api = client.query_api()
+    data_frame = query_api.query_data_frame(query)    
+
+    if isinstance(data_frame, DataFrame):
+            return data_frame.to_json(orient="records")
+    else:
+        return ''
+
+def process_influxdb_entities(data):
+    # Procesar la primera consulta a InfluxDB
+    use_idb_api_1 = os.getenv('USE_IDB_API_1', 'false').lower() in ('true', '1', 't', 'y', 'yes')
+    if use_idb_api_1:
+        bucket_1 = os.getenv('IDB_BUCKET_1')
+        if not bucket_1:
+            raise ValueError("IDB_BUCKET_1 is not set in the environment variables")
+        org_1 = os.getenv('IDB_ORG_1')
+        if not org_1:
+            raise ValueError("IDB_ORG_1 is not set in the environment variables")
+        query_1 = os.getenv('IDB_QUERY_1')
+        if not query_1:
+            raise ValueError("IDB_QUERY_1 is not set in the environment variables")
+        agent_description_1 = os.getenv('IDB_AGENT_DESCRIPTION_1', 'agent')
+
+        entities_1 = fetch_influxdb_data(bucket_1, org_1, query_1)
+        agent_annotation_1 = Annotation(
+            type="agent",
+            data=AgentAnnotation(
+                agent=agent_description_1,
+                text=entities_1
+            )
+        )
+
+        if data.messages and data.messages[-1].role == MessageRole.USER:
+            if data.messages[-1].annotations is None:
+                data.messages[-1].annotations = []
+            data.messages[-1].annotations.append(agent_annotation_1)
+
+    # Procesar la segunda consulta a InfluxDB
+    use_idb_api_2 = os.getenv('USE_IDB_API_2', 'false').lower() in ('true', '1', 't', 'y', 'yes')
+    if use_idb_api_2:
+        bucket_2 = os.getenv('IDB_BUCKET_2')
+        if not bucket_2:
+            raise ValueError("IDB_BUCKET_2 is not set in the environment variables")
+        org_2 = os.getenv('IDB_ORG_2')
+        if not org_2:
+            raise ValueError("IDB_ORG_2 is not set in the environment variables")
+        query_2 = os.getenv('IDB_QUERY_2')
+        if not query_2:
+            raise ValueError("IDB_QUERY_2 is not set in the environment variables")
+        agent_description_2 = os.getenv('IDB_AGENT_DESCRIPTION_2', 'agent')
+
+        entities_2 = fetch_influxdb_data(bucket_2, org_2, query_2)
+        agent_annotation_2 = Annotation(
+            type="agent",
+            data=AgentAnnotation(
+                agent=agent_description_2,
+                text=entities_2
+            )
+        )
+
+        if data.messages and data.messages[-1].role == MessageRole.USER:
+            if data.messages[-1].annotations is None:
+                data.messages[-1].annotations = []
+            data.messages[-1].annotations.append(agent_annotation_2)
+
 # streaming endpoint - delete if not needed
 @r.post("")
 async def chat(
@@ -95,6 +171,7 @@ async def chat(
 ):
     try:        
         process_ha_rest_entities(data)
+        process_influxdb_entities(data)
 
         last_message_content = data.get_last_message_content()
         messages = data.get_history_messages()
@@ -128,6 +205,7 @@ async def chat_request(
 ) -> Result:
     
     process_ha_rest_entities(data)
+    process_influxdb_entities(data)
 
     last_message_content = data.get_last_message_content()
     messages = data.get_history_messages()
