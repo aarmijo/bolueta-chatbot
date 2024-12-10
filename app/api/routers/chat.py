@@ -105,62 +105,52 @@ def fetch_influxdb_data(bucket: str, org: str, query: str):
     else:
         return ''
 
-def process_influxdb_entities(data):
-    # Procesar la primera consulta a InfluxDB
-    use_idb_api_1 = os.getenv('USE_IDB_API_1', 'false').lower() in ('true', '1', 't', 'y', 'yes')
-    if use_idb_api_1:
-        bucket_1 = os.getenv('IDB_BUCKET_1')
-        if not bucket_1:
-            raise ValueError("IDB_BUCKET_1 is not set in the environment variables")
-        org_1 = os.getenv('IDB_ORG_1')
-        if not org_1:
-            raise ValueError("IDB_ORG_1 is not set in the environment variables")
-        query_1 = os.getenv('IDB_QUERY_1')
-        if not query_1:
-            raise ValueError("IDB_QUERY_1 is not set in the environment variables")
-        agent_description_1 = os.getenv('IDB_AGENT_DESCRIPTION_1', 'agent')
+def process_influxdb_entities(data: ChatData):
+    queries = [
+        {
+            "use_api": os.getenv('USE_IDB_API_1', 'false').lower() in ('true', '1', 't', 'y', 'yes'),
+            "bucket": os.getenv('IDB_BUCKET_1'),
+            "org": os.getenv('IDB_ORG_1'),
+            "query": os.getenv('IDB_QUERY_1'),
+            "agent_description": os.getenv('IDB_AGENT_DESCRIPTION_1', 'agent'),
+            "bucket_name": 'IDB_BUCKET_1',
+            "org_name": 'IDB_ORG_1',
+            "query_name": 'IDB_QUERY_1'
+        },
+        {
+            "use_api": os.getenv('USE_IDB_API_2', 'false').lower() in ('true', '1', 't', 'y', 'yes'),
+            "bucket": os.getenv('IDB_BUCKET_2'),
+            "org": os.getenv('IDB_ORG_2'),
+            "query": os.getenv('IDB_QUERY_2'),
+            "agent_description": os.getenv('IDB_AGENT_DESCRIPTION_2', 'agent'),
+            "bucket_name": 'IDB_BUCKET_2',
+            "org_name": 'IDB_ORG_2',
+            "query_name": 'IDB_QUERY_2'
+        }
+    ]
 
-        entities_1 = fetch_influxdb_data(bucket_1, org_1, query_1)
-        agent_annotation_1 = Annotation(
-            type="agent",
-            data=AgentAnnotation(
-                agent=agent_description_1,
-                text=entities_1
+    for query_config in queries:
+        if query_config["use_api"]:
+            if not query_config["bucket"]:
+                raise ValueError(f"{query_config['bucket_name']} is not set in the environment variables")
+            if not query_config["org"]:
+                raise ValueError(f"{query_config['org_name']} is not set in the environment variables")
+            if not query_config["query"]:
+                raise ValueError(f"{query_config['query_name']} is not set in the environment variables")
+
+            entities = fetch_influxdb_data(query_config["bucket"], query_config["org"], query_config["query"])
+            agent_annotation = Annotation(
+                type="agent",
+                data=AgentAnnotation(
+                    agent=query_config["agent_description"],
+                    text=entities
+                )
             )
-        )
 
-        if data.messages and data.messages[-1].role == MessageRole.USER:
-            if data.messages[-1].annotations is None:
-                data.messages[-1].annotations = []
-            data.messages[-1].annotations.append(agent_annotation_1)
-
-    # Procesar la segunda consulta a InfluxDB
-    use_idb_api_2 = os.getenv('USE_IDB_API_2', 'false').lower() in ('true', '1', 't', 'y', 'yes')
-    if use_idb_api_2:
-        bucket_2 = os.getenv('IDB_BUCKET_2')
-        if not bucket_2:
-            raise ValueError("IDB_BUCKET_2 is not set in the environment variables")
-        org_2 = os.getenv('IDB_ORG_2')
-        if not org_2:
-            raise ValueError("IDB_ORG_2 is not set in the environment variables")
-        query_2 = os.getenv('IDB_QUERY_2')
-        if not query_2:
-            raise ValueError("IDB_QUERY_2 is not set in the environment variables")
-        agent_description_2 = os.getenv('IDB_AGENT_DESCRIPTION_2', 'agent')
-
-        entities_2 = fetch_influxdb_data(bucket_2, org_2, query_2)
-        agent_annotation_2 = Annotation(
-            type="agent",
-            data=AgentAnnotation(
-                agent=agent_description_2,
-                text=entities_2
-            )
-        )
-
-        if data.messages and data.messages[-1].role == MessageRole.USER:
-            if data.messages[-1].annotations is None:
-                data.messages[-1].annotations = []
-            data.messages[-1].annotations.append(agent_annotation_2)
+            if data.messages and data.messages[-1].role == MessageRole.USER:
+                if data.messages[-1].annotations is None:
+                    data.messages[-1].annotations = []
+                data.messages[-1].annotations.append(agent_annotation)
 
 # streaming endpoint - delete if not needed
 @r.post("")
