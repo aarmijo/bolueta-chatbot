@@ -61,15 +61,16 @@ Open [http://localhost:8000](http://localhost:8000) with your browser to start t
 If you're having documents in the `./data` folder, run the following command to generate vector embeddings of the documents:
 
 ```
-docker run \
-  --rm \
-  -v $(pwd)/.env:/app/.env \ # Use ENV variables and configuration from your file-system
+docker run -d \
+  --restart=always \
+  --name bolueta-chatbot \ # Use ENV variables and configuration from your file-system 
+  -v $(pwd)/.env:/app/.env \
   -v $(pwd)/config:/app/config \
-  -v $(pwd)/ha-entities.json:/app/ha-entities.json \
+  -v $(pwd)/ha-entities.json:/app/ha-entities.json \ # Use your local folder to describe ha entities
   -v $(pwd)/data:/app/data \ # Use your local folder to read the data
   -v $(pwd)/storage:/app/storage \ # Use your file system to store the vector database
-  <your_image_name> \
-  poetry run generate
+  -p 8000:8000 <your_image_name> \
+
 ```
 
 The app will then be able to answer questions about the documents in the `./data` folder.

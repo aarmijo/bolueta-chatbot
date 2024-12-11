@@ -47,4 +47,9 @@ RUN rm -rf .frontend
 
 EXPOSE 8000
 
+# Generate index
+RUN poetry run generate > ./index.log 2>&1
+
+#CMD ["sleep", "1d"]
+#CMD ["sh", "-c", "poetry run prod 2>&1 | tee ./poetry_run_prod.log"]
 CMD ["poetry", "run", "prod"]

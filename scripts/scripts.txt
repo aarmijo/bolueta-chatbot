@@ -1,0 +1,13 @@
+docker build -t bolueta-chatbot .
+
+docker run -d --restart=always --name bolueta-chatbot -v $(pwd)/.env:/app/.env -v $(pwd)/config:/app/config -v $(pwd)/ha-entities.json:/app/ha-entities.json -v $(pwd)/data:/app/data -v $(pwd)/storage:/app/storage -p 8000:8000 bolueta-chatbot 
+
+docker exec -it 6ea bash
+docker logs -f 6ea
+
+poetry run generate
+poetry run prod
+
+curl --location 'localhost:8000/api/chat/request' \
+--header 'Content-Type: application/json' \
+--data '{ "messages": [{ "role": "user", "content": "dónde está alberto?" }] }'
