@@ -38,9 +38,9 @@ RUN poetry install --no-root --no-cache --only main
 # ====================================
 FROM build AS release
 
-COPY --from=frontend /app/frontend/out /app/static
-
 COPY . .
+
+COPY --from=frontend /app/frontend/out /app/static
 
 # Remove frontend code
 RUN rm -rf .frontend
