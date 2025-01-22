@@ -7,7 +7,7 @@ WORKDIR /app/frontend
 
 COPY .frontend /app/frontend
 
-RUN npm install && npm run build
+RUN npm install --legacy-peer-deps && npm run build
 
 
 # ====================================
@@ -20,7 +20,7 @@ WORKDIR /app
 ENV PYTHONPATH=/app
 
 # Install Poetry
-RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/opt/poetry python && \
+RUN curl -sSL https://install.python-poetry.org | POETRY_VERSION=2.0.1 POETRY_HOME=/opt/poetry python && \
     cd /usr/local/bin && \
     ln -s /opt/poetry/bin/poetry && \
     poetry config virtualenvs.create false
